@@ -80,7 +80,8 @@ export default function Form() {
             .validate(e.target.name === "sauce" || e.target.name === "toppings" ? e.target.checked : e.target.value)
             .then(valid => {
                 setErrors({
-                    ...errors, [e.target.name]: errors.errors[0]
+                    ...errors, 
+                    [e.target.name]: ""
                 })
             })
             .catch(err => {
@@ -139,8 +140,8 @@ export default function Form() {
                 <br/>
                 What kind of sauce?
                 <br/>
-                <input id="marinara" value={formDat.sauce} onChange={inputChange} type="checkbox" name="marinara"/>Marinara
-                <input id="garlic" value={formDat.sauce} onChange={inputChange} type="checkbox" name="garlic"/>Buttery Garlic
+                <input id="marinara" value={formDat.sauce} onChange={inputChange} type="checkbox" name="sauce"/>Marinara
+                <input id="garlic" value={formDat.sauce} onChange={inputChange} type="checkbox" name="sauce"/>Buttery Garlic
                 {errors.sauce.length > 0 ? <p className="error">{errors.sauce}</p> : null}
             </label>
             <label htmlFor="toppings">
@@ -148,18 +149,18 @@ export default function Form() {
                 <br/>
                 Choose your toppings (4max)
                 <br/>
-                <input id="pepperoni" value={formDat.toppings} onChange={inputChange} type="checkbox" name="pepperoni"/>Pepperoni<br/>
-                <input id="sausage" value={formDat.toppings} onChange={inputChange} type="checkbox" name="sausage"/>Sausage<br/>
-                <input id="chicken" value={formDat.toppings} onChange={inputChange} type="checkbox" name="chicken"/>Chicken<br/>
-                <input id="cBacon" value={formDat.toppings} onChange={inputChange} type="checkbox" name="cBacon"/>Candian Bacon<br/>
-                <input id="mushroom" value={formDat.toppings} onChange={inputChange} type="checkbox" name="mushroom"/>Mushroom<br/>
-                <input id="onion" value={formDat.toppings} onChange={inputChange} type="checkbox" name="onion"/>Onion<br/>
-                <input id="greenPepper" value={formDat.toppings} onChange={inputChange} type="checkbox" name="greenPepper"/>Green Pepper<br/>
-                <input id="tomato" value={formDat.toppings} onChange={inputChange} type="checkbox" name="tomato"/>Tomatoes<br/>
-                <input id="olives" value={formDat.toppings} onChange={inputChange} type="checkbox" name="olives"/>Olives<br/>
-                <input id="aHearts" value={formDat.toppings} onChange={inputChange} type="checkbox" name="aHearts"/>Artichoke Hearts<br/>
-                <input id="pineapple" value={formDat.toppings} onChange={inputChange} type="checkbox" name="pineapple"/>Pineapple<br/>
-                <input id="xCheese" value={formDat.toppings} onChange={inputChange} type="checkbox" name="xCheese"/>xTra Cheese<br/>
+                <input id="pepperoni" value={formDat.toppings} onChange={inputChange} type="checkbox" name="toppings"/>Pepperoni<br/>
+                <input id="sausage" value={formDat.toppings} onChange={inputChange} type="checkbox" name="toppings"/>Sausage<br/>
+                <input id="chicken" value={formDat.toppings} onChange={inputChange} type="checkbox" name="toppings"/>Chicken<br/>
+                <input id="cBacon" value={formDat.toppings} onChange={inputChange} type="checkbox" name="toppings"/>Candian Bacon<br/>
+                <input id="mushroom" value={formDat.toppings} onChange={inputChange} type="checkbox" name="toppings"/>Mushroom<br/>
+                <input id="onion" value={formDat.toppings} onChange={inputChange} type="checkbox" name="toppings"/>Onion<br/>
+                <input id="greenPepper" value={formDat.toppings} onChange={inputChange} type="checkbox" name="toppings"/>Green Pepper<br/>
+                <input id="tomato" value={formDat.toppings} onChange={inputChange} type="checkbox" name="toppings"/>Tomatoes<br/>
+                <input id="olives" value={formDat.toppings} onChange={inputChange} type="checkbox" name="toppings"/>Olives<br/>
+                <input id="aHearts" value={formDat.toppings} onChange={inputChange} type="checkbox" name="toppings"/>Artichoke Hearts<br/>
+                <input id="pineapple" value={formDat.toppings} onChange={inputChange} type="checkbox" name="toppings"/>Pineapple<br/>
+                <input id="xCheese" value={formDat.toppings} onChange={inputChange} type="checkbox" name="toppings"/>xTra Cheese<br/>
                 {errors.toppings.length > 0 ? <p className="error">{errors.toppings}</p> : null}
             </label>
             <label htmlFor="specialInstructions">
