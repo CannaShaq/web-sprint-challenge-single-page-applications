@@ -62,7 +62,9 @@ export default function Form() {
             .post("https://reqres.in/api/users", formDat)
             .then(res => {
                 setPost(res.data);
+
                 console.log("Success: ", post);
+
                 setFormDat({
                     name: "",
                     sizeChoice: "",
@@ -70,8 +72,8 @@ export default function Form() {
                     toppings: false,
                     specialInstructions: "",
                 })
-            .catch(err=> console.log(err.response));
             })
+            .catch(err=> console.log("formSubmit() err: ", err.response));
     }
 
     const validateChange = e => {
