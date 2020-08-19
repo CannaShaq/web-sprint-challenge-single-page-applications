@@ -1,11 +1,24 @@
 import React from "react";
+import { Route } from 'react-router-dom'
+import Header from './components/Header';
+import HomePg from "./components/HomePg";
+import Form from "./components/Form";
+import ConfirmPg from "./components/ConfirmPg";
 
 const App = () => {
   return (
-    <>
-      <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
-    </>
+  <div>
+    <Header/>
+    <Route exact path="/">
+      <HomePg/>
+    </Route>
+    <Route path="/form">
+      <Form/>
+    </Route>
+    <Route path ="/confirmation">
+      <ConfirmPg/>
+    </Route>
+  </div>   
   );
 };
 export default App;
